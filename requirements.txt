@@ -1,0 +1,16 @@
+pandas
+numpy
+scipy
+scikit-learn
+xgboost
+matplotlib
+seaborn
+umap-learn
+openai
+torch
+transformers
+accelerate
+huggingface_hub
+sentence-transformers
+tqdm
+pyreadstat

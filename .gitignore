@@ -1,0 +1,26 @@
+# Data (never commit survey microdata or large derived files)
+*.csv
+*.pkl
+*.zip
+*.dta
+nsduh_analysis_outputs/
+TEDS_A_*/
+*_extracted/
+*_csv_by_year/
+
+# Secrets / environment
+.env
+*.key
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
