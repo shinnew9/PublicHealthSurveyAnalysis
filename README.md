@@ -27,12 +27,8 @@ assumes the outputs of earlier steps are available in `nsduh_analysis_outputs/`
 | `08_figure_construct_validity.py` | Generates the PCA/UMAP/t-SNE embedding-space projection figure and silhouette scores. |
 | `09_checking_external_validity.ipynb` | Preliminary TEDS-A data preparation for the planned external-validity comparison (subgroup-level, not yet an individual-level linkage). |
 | `10_replication_on_LLaMA3.ipynb` | Open-weight replication: regenerates profiles with LLaMA-3.1-8B-Instruct and re-evaluates under both an open-weight embedding model (BGE-large) and the same embedding model used for the GPT profiles (`text-embedding-3-small`). |
-
-Two additional Wilcoxon-based checks reported in the manuscript's Construct
-Validity section (cross-respondent embedding diversity, linguistic-marker
-sensitivity to input covariates) are computed directly from the embeddings and
-profiles produced by `00`; standalone scripts for these will be added here
-before final submission.
+| `11_diversity_check.py` | Cross-respondent embedding diversity check: compares within-respondent reliability against pairwise similarity across distinct respondents, to test whether profiles collapse into a generic template. |
+| `12_linguistic_marker_check.py` | Linguistic marker sensitivity check: tests whether profile language (word count, sentence length, vocabulary complexity, etc.) responds systematically to insurance status and age group. |
 
 ## Setup
 
@@ -67,9 +63,13 @@ analysis, download the following from SAMHSA and place them in this directory:
 - **NSDUH** (2021–2024 public use file): [SAMHSA NSDUH data page](https://www.samhsa.gov/data/data-we-collect/nsduh-national-survey-drug-use-and-health)
 - **TEDS-A** (2021–2023 public use files, for the planned external-validity check): [SAMHSA TEDS data page](https://www.samhsa.gov/data/data-we-collect/teds-treatment-episode-data-set)
 
-Note that some notebooks (e.g. `09_checking_external_validity.ipynb`) contain
-an absolute `BASE_DIR`-style path from the original run environment; update it
-to point at your local clone before running.
+`09_checking_external_validity.ipynb` reads its data directory from the
+`NSDUH_DATA_DIR` environment variable (defaulting to the current directory),
+so it runs from the repo root without manual editing:
+
+```bash
+export NSDUH_DATA_DIR="."
+```
 
 ## Notes on reproducibility
 
