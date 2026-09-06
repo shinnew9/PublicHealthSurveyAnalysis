@@ -1,5 +1,6 @@
 # Data (never commit survey microdata or large derived files)
 *.csv
+!census_data/*.csv
 *.pkl
 *.zip
 *.dta
