@@ -25,8 +25,8 @@ assumes the outputs of earlier steps are available in `nsduh_analysis_outputs/`
 | `06_reliability_revalidation.py` | Reliability check: 10 repeated GPT rewrites per respondent (n=300) on the final leak-free pipeline, reporting pairwise cosine similarity. |
 | `07_figure_age_group.py` | Generates the cost-barrier-by-age-group figure. |
 | `08_figure_construct_validity.py` | Generates the PCA/UMAP/t-SNE embedding-space projection figure and silhouette scores. |
-| `09_checking_external_validity.ipynb` | TEDS-A data preparation (extracts the Stata files and converts them to CSV) for the subgroup-level external-validity comparison in `14_teds_subgroup_validation.py`. |
-| `10_replication_on_LLaMA3.ipynb` | Open-weight replication: regenerates profiles with LLaMA-3.1-8B-Instruct and re-evaluates under both an open-weight embedding model (BGE-large) and the same embedding model used for the GPT profiles (`text-embedding-3-small`). |
+| `09_checking_external_validity.py` | TEDS-A data preparation (extracts the Stata files and converts them to CSV) for the subgroup-level external-validity comparison in `14_teds_subgroup_validation.py`. |
+| `10_replication_on_LLaMA3.py` | Open-weight replication: regenerates profiles with LLaMA-3.1-8B-Instruct and re-evaluates under both an open-weight embedding model (BGE-large) and the same embedding model used for the GPT profiles (`text-embedding-3-small`). Run as three stages: `python 10_replication_on_LLaMA3.py generate\|embed\|evaluate`. |
 | `11_diversity_check.py` | Cross-respondent embedding diversity check: compares within-respondent reliability against pairwise similarity across distinct respondents, to test whether profiles collapse into a generic template. |
 | `12_linguistic_marker_check.py` | Linguistic marker sensitivity check: tests whether profile language (word count, sentence length, vocabulary complexity, etc.) responds systematically to insurance status and age group. |
 | `13_interpretability_pca.py` | PCA on the GPT profile embeddings: explained variance per component and each component's association with `cost_barrier`, to locate where the predictive signal lives in the embedding space. |
