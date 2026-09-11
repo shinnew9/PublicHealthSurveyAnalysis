@@ -31,6 +31,7 @@ assumes the outputs of earlier steps are available in `nsduh_analysis_outputs/`
 | `12_linguistic_marker_check.py` | Linguistic marker sensitivity check: tests whether profile language (word count, sentence length, vocabulary complexity, etc.) responds systematically to insurance status and age group. |
 | `13_interpretability_pca.py` | PCA on the GPT profile embeddings: explained variance per component and each component's association with `cost_barrier`, to locate where the predictive signal lives in the embedding space. |
 | `14_teds_subgroup_validation.py` | External validity check: cross-validated NSDUH-predicted cost-barrier probability vs. TEDS-A admission rate (per Census population estimate), compared across age, race/ethnicity, and insurance-status subgroups. Requires `09` to have been run first, and the population estimates in `census_data/`. |
+| `15_figure_cross_year_drop.py` | Regenerates the cross-year AUC drop figures (mean degradation by model, GPT-minus-raw drop pooled and by transfer direction) from the saved `01` outputs, with a solid high-contrast zero-reference line and larger, more legible axis labels. |
 
 ## Setup
 
